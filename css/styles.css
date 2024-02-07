@@ -4093,15 +4093,32 @@ td:last-child {
  * ## folio entries 
  * ------------------------------------------------------------------- */
 .folio-entries .entry {
+    --marg  : 3%;
     flex    : none;
-    width   : 33.3%;
-    margin  : 0;
-    padding : 0;
+    width   : calc(33.3% - var(--marg) );
+    margin-left  : var(--marg);
+    margin-bottom: calc(var(--marg) * 2);
+    padding : 1px;
     overflow: hidden;
     position: relative;
-    padding: 5px;
-    /* border: 5px solid var(--color-white); */
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    box-shadow:    20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
 }
+
+.folio-entries .entry:nth-child(1){
+    margin-left: 0;
+}
+.folio-entries .entry:nth-child(4){
+    margin-left: 0;
+}
+.folio-entries .entry:nth-child(7){
+    margin-left: 0;
+}
+
 
 .folio-entries .entry__link {
     display : block;
@@ -4164,6 +4181,8 @@ td:last-child {
     margin-bottom: var(--vspace-0_125);
     color        : var(--color-gray-1);
 }
+
+
 
 /* on hover
  */
@@ -4271,7 +4290,11 @@ td:last-child {
 
 @media screen and (max-width: 500px) {
     .folio-entries .entry {
-        width: 100%;
+        --marg  : 3%;
+        flex    : none;
+        width   : calc(100% - var(--marg) );
+        margin-left  : var(--marg);
+        margin-bottom: calc(var(--marg) * 2);
     }
 }
 
@@ -4541,7 +4564,14 @@ td:last-child {
         right : calc(var(--gutter) - 1.2rem);
     }
     .folio-entries .entry{
-        width: 50%;
+        
+        width: calc(50% - var(--marg)) ;
+    }
+    .folio-entries .entry:nth-child(odd){
+        margin-left: 0;
+    }
+    .folio-entries .entry:nth-child(4){
+        margin-left: var(--marg);
     }
 }
 
@@ -4566,6 +4596,10 @@ td:last-child {
 
     .folio-entries .entry{
         width: 100%;
+        margin-left: 0;
+    }
+    .folio-entries .entry:nth-child(4){
+        margin-left: 0;
     }
 
     .ss-go-top {
