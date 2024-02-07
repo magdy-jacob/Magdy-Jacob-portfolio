@@ -100,7 +100,7 @@
 
   /* theme color variations
    */
-    --color-1-op      : hsl(259, 96%, 48%, 0.89);
+    --color-1-op      : hsla(259, 96%, 48%, 0.575);
     --color-1-lightest: hsla(259, 96%, 75%, 1);
     --color-1-lighter : hsla(259, 96%, 65%, 1);
     --color-1-light   : hsla(259, 96%, 55%, 1);
@@ -4094,7 +4094,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 .folio-entries .entry {
     flex    : none;
-    width   : 50%;
+    width   : 33.3%;
     margin  : 0;
     padding : 0;
     overflow: hidden;
@@ -4540,6 +4540,9 @@ td:last-child {
         bottom: calc(var(--bottom-padding) + var(--vspace-0_75));
         right : calc(var(--gutter) - 1.2rem);
     }
+    .folio-entries .entry{
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -4559,6 +4562,10 @@ td:last-child {
 
     .ss-copyright span::after {
         display: none;
+    }
+
+    .folio-entries .entry{
+        width: 100%;
     }
 
     .ss-go-top {
