@@ -3116,7 +3116,67 @@ td:last-child {
     overflow      : hidden;
     position      : relative;
 }
-
+/* From Uiverse.io by gharsh11032000 */ 
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    line-height: 1.6;
+    transition: all 0.64s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 36px;
+    border-radius: 24px;
+    background: transparent;
+    color: #000000;
+    z-index: 1;
+    transition: all 0.64s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0a3cff;
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: skew(-24deg);
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.64s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .content .heading {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.3;
+    z-index: 1;
+  }
+  .content .para {
+    z-index: 1;
+    opacity: 0.8;
+    font-size: 18px;
+  }
+  .content .para-sm {
+    font-size: 16px;
+  }
+  .card:hover::before {
+    opacity: 1;
+    transform: skew(0deg);
+    clip-path: circle(140.9% at 0 0);
+  }
+  .card:hover .content {
+    color: #ffffff;
+  }
+  
 
 /* ===================================================================
  * # SITE HEADER
@@ -3273,7 +3333,7 @@ td:last-child {
 
 .s-header__menu-toggle span {
     display         : block;
-    background-color: var(--color-1);
+    background-color: var(--color-white);
     width           : var(--toggle-line-width);
     height          : var(--toggle-line-height);
     margin-top      : -1px;
@@ -4146,9 +4206,12 @@ td:last-child {
     left            : 0;
 }
 
-.folio-entries .entry {
+/* .folio-entries .entry .entry__thumb .bg-img{
     position: relative;
-}
+    width: 339px;
+    height: 422px;
+} */
+
 
 .folio-entries .entry__info {
     z-index   : 2;
@@ -4333,6 +4396,11 @@ td:last-child {
     letter-spacing: -0.035em;
     line-height   : 1;
     color         : var(--color-3-dark);
+}
+.counter-items .comp {
+    font-size               : var(--text-display-2) !important;
+    padding-block-end       : 2rem;
+    margin-inline-start     : -.8rem;
 }
 
 .counter-items span {
